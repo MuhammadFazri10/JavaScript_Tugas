@@ -12,6 +12,9 @@ class Konversi {
       if (to == "far") {
         return (9 / 5) * num1 + 32;
       }
+      if (to == "kel"){
+        return num1 + 273.15;
+      }
     }
     fromReamur(to, num1) {
       if (to == "rea") {
@@ -23,6 +26,9 @@ class Konversi {
       if (to == "far") {
         return (9 / 4) * num1 + 32;
       }
+      if (to == "kel"){
+        return 5/4 * num1 + 273.15;
+      }
     }
     fromFarenheit(to, num1) {
       if (to == "far") {
@@ -33,6 +39,23 @@ class Konversi {
       }
       if (to == "rea") {
         return (4 / 9) * (num1 - 32);
+      }
+      if (to == "kel"){
+        return 5/9 * (num1 -32) + 273.15;
+      }
+    }
+    fromKelvin(to, num1){
+      if (to == "far"){
+        return 9/5 * (num1 - 273.15) +32;
+      }
+      if (to == "cel"){
+        return num1 - 273.15;
+      }
+      if (to == "rea"){
+        return  (num1 - 273.15) * 4/5 ;
+      }
+      if (to == "kel"){
+        return num1;
       }
     }
   }

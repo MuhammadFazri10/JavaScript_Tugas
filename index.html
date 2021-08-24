@@ -39,7 +39,7 @@
       <form class="text-center border border-light p-5">
         <div class="h4 mb-4" id="date-part"></div>
         <div class="h4 mb-4" id="time-part"></div>
-        <p class="h4 mb-4">Temperature Convertion</p>
+        <p class="h4 mb-4">Temperature konversiion</p>
         <div class="h4 mb-12">
           <select name="from" id="from" onchange="select()">
             <option value="cel">Celcius</option>
@@ -82,7 +82,7 @@
       </button>
     </div>
   </body>
-  <script src="./Convert.js"></script>
+  <script src="./konversi.js"></script>
   <script>
     $(document).ready(function () {
       var interval = setInterval(function () {
@@ -117,24 +117,31 @@
       document.getElementById("result").value = "";
     }
 
-    const convert = new Convert();
+    const konversi = new Konversi();
     function conv() {
       if (document.getElementById("from").value == "cel") {
-        const res = convert.fromCelcius(
+        const res = konversi.fromCelcius(
           document.getElementById("to").value,
           parseInt(document.getElementById("num1").value)
         );
         document.getElementById("result").value = res;
       }
       if (document.getElementById("from").value == "rea") {
-        const res = convert.fromReamur(
+        const res = konversi.fromReamur(
           document.getElementById("to").value,
           parseInt(document.getElementById("num1").value)
         );
         document.getElementById("result").value = res;
       }
       if (document.getElementById("from").value == "far") {
-        const res = convert.fromFarenheit(
+        const res = konversi.fromFarenheit(
+          document.getElementById("to").value,
+          parseInt(document.getElementById("num1").value)
+        );
+        document.getElementById("result").value = res;
+      }
+      if(document.getElementById("from").value == "kel") {
+        const res = konversi.fromKelvin(
           document.getElementById("to").value,
           parseInt(document.getElementById("num1").value)
         );
